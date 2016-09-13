@@ -1,0 +1,56 @@
+<%- include header.ejs %>
+
+
+    <% if (locals.success) { %>
+    <div class="alert alert-success">
+        <%= locals.success %>
+    </div>
+    <% } %>
+    <% if (locals.error) { %>
+    <div class="alert alert-error">
+        <%= locals.error %>
+    </div>
+    <% } %>
+
+    <form class="form-horizontal" method="post">
+        <fieldset>
+            <legend>用户注册</legend>
+            <div class="control-group">
+                <label class="control-label" for="username">用户名</label>
+                <div class="controls">
+                    <input type="text" class="input-xlarge" id="username"
+                           name="username" autofocus="autofocus" pattern="^[a-zA-Z\d]+$" required>
+                    <p class="help-block">你的账户名称，用于登录和显示。只能包含数字和字母。</p>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="password">口令</label>
+                <div class="controls">
+                    <input type="password" class="input-xlarge" id="password" name="password"
+                            pattern="(?=.*[0-9])(?=.*[a-zA-Z]).{6,16}" required>
+                    <p class="help-block">密码长度应在6位到16位之间，包含数字、字母</p>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="password-repeat">重复输入口令</label>
+                <div class="controls">
+                    <input type="password" class="input-xlarge" id="password-repeat" name="password-repeat"
+                           pattern="(?=.*[0-9])(?=.*[a-zA-Z]).{6,16}" required>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="email">电子邮箱</label>
+                <div class="controls">
+                    <input type="email" class="input-xlarge" id="email" name="email"
+                           pattern="^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$" required>
+                    <p class="help-block">用于接收验证码</p>
+                </div>
+            </div>
+            <div class="control-group">
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">注册</button>
+            </div>
+        </fieldset>
+    </form>
+
+<%- include footer.ejs %>
