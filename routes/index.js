@@ -144,8 +144,8 @@ exports.doReg = function(req, res) {
             secureConnection: false, // 使用 SSL
             port: 25, // SMTP 端口
             auth: {
-              user: "1125605844@qq.com", // 账号
-              pass: "wkhiejdnzvugfjee" // 密码
+              user: "你的账号", // 账号
+              pass: "你的密码" // 密码
             }
           });
           console.log(verification);
